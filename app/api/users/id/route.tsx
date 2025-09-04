@@ -5,7 +5,7 @@ export function GET(
   { params }: { params: { id: number } }
 ) {
   if (params.id > 10)
-    return NextResponse.json({ error: "User not founc" }, { status: 404 });
+    return NextResponse.json({ error: "User not found" }, { status: 404 });
 
   return NextResponse.json({ id: 1, name: "Levis" });
 }
