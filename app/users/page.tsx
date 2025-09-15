@@ -3,10 +3,12 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 interface Props {
-  searchParams: { sortOrder: string };
+  searchParams: Promise<{ sortOrder?: string }>;
 }
 
-const UsersPage = async ({ searchParams: { sortOrder } }: Props) => {
+const UsersPage = async ({ searchParams }: Props) => {
+  const { sortOrder } = await searchParams; 
+
   return (
     <>
       <h1>Users</h1>
@@ -14,7 +16,7 @@ const UsersPage = async ({ searchParams: { sortOrder } }: Props) => {
         New User
       </Link>
       <Suspense fallback={<p>Loading...</p>}>
-        <UserTable sortOrder={sortOrder} />
+        <UserTable sortOrder={sortOrder ?? "asc"} />
       </Suspense>
     </>
   );
