@@ -1,18 +1,27 @@
-import React from 'react'
-import { Html, Body, Container, Text, Link, Preview} from "@react-email/components"
+import {
+  Html,
+  Body,
+  Container,
+  Text,
+  Link,
+  Preview,
+  Tailwind,
+} from "@react-email/components";
 
 const WelcomeTemplate = () => {
   return (
     <Html>
-        <Preview>Welcome Aboard!</Preview>
-        <Body>
-            <Container>
-                <Text>Hello World!</Text>
-                <Link href='https://www.random-site.com'>Random Site</Link>
-            </Container>
+      <Preview>Welcome Aboard!</Preview>
+      <Tailwind>
+        <Body className="bg-white">
+          <Container>
+            <Text className="font-bold text-3xl">Hello World!</Text>
+            <Link href="https://www.random-site.com">Random Site</Link>
+          </Container>
         </Body>
+      </Tailwind>
     </Html>
-  )
-}
+  );
+};
 
-export default WelcomeTemplate
+export default WelcomeTemplate;
