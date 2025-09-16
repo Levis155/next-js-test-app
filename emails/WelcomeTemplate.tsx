@@ -8,7 +8,7 @@ import {
   Tailwind,
 } from "@react-email/components";
 
-const WelcomeTemplate = () => {
+const WelcomeTemplate = ({name}: {name: string}) => {
   return (
     <Html>
       <Preview>Welcome Aboard!</Preview>
