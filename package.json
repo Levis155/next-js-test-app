@@ -35,6 +35,7 @@
     "zod": "^4.1.5"
   },
   "devDependencies": {
+    "@react-email/preview-server": "^4.2.11",
     "@tailwindcss/postcss": "^4.1.12",
     "daisyui": "^5.0.54"
   }
