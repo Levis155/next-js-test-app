@@ -1,23 +1,25 @@
-import Image from "next/image";
-import { Metadata } from "next";
+"use client";
 
-export default async function Home() {
+
+export default function Home() {
   return (
     <main>
-      <Image
-        src="https://bit.ly/react-cover"
-        alt="react cover"
-        fill
-        className="object-cover"
-        sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-        quality={100}
-        priority
-      />
+      <button
+        onClick={async () => {
+          const _ = (await import('lodash')).default;
+          
+          const users = [
+            {name: 'c'},
+            {name: 'b'},
+            {name: 'a'},
+          ]
+
+          const sorted = _.orderBy(users, ['name']);
+          console.log(sorted);
+        }}
+      >
+        Show
+      </button>
     </main>
   );
-}
-
-export const metadata: Metadata = {
-  title: '...',
-  description: '...',
 }
